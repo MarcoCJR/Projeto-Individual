@@ -59,12 +59,12 @@ body {
   font-weight: bold;
 }
 
-.btn_simulador {
-  color: white;
+.botaoLogin {
+  color: goldenrod;
   margin-left: 50px;
-  background-color: rgb(78 178 101);
+  background-color: white;
   height: 40px;
-  width: 200px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@ body {
   cursor: pointer;
 }
 
-.btn_simulador:hover {
+.botaoLogin:hover {
   transform: scale(1.1);
 }
 
@@ -96,7 +96,7 @@ a:visited {
 }
 
 a:hover {
-  color: white;
+  color: goldenrod;
   background-color: transparent;
   text-decoration: underline;
   font-size: 20px;
@@ -105,31 +105,6 @@ a:hover {
 
 a:active {
   color: white;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-.link_a:link {
-  color: rgb(78 178 101);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.link_a:visited {
-  color: rgb(78 178 101);
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.link_a:hover {
-  color: rgb(78 178 101);
-  background-color: transparent;
-  text-decoration: underline;
-  font-size: 20px;
-}
-
-.link_a:active {
-  color: rgb(78 178 101);
   background-color: transparent;
   text-decoration: underline;
 }
