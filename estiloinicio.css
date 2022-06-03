@@ -1,154 +1,176 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  /*header*/
-
-  body {
-    font-family: monospace;
-    margin: 0px;
-    height: 500px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(https://wallpaperaccess.com/full/5405138.jpg);
-  }
-  
-  .header {
-    width: 100%;
-    height: 85px;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.700);
-  }
-  
-  .logo_header {
-    height: 60px;
-    width: 170px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .container {
-    width: 100%;
-    display: flex;
-  }
-  
-  .header .container {
-    height: 100%;
-    width: 95%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar {
-    margin-top: 14px;
-    width: 500px;
-    color: rgb(255, 255, 255);
-    list-style: none;
-    align-items: center;
-    display: flex;
-    padding: 0;
-    justify-content: space-between;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .entrarheader {
-    color: rgb(78 178 101);
-    margin-top: 5px;
-  }
-  
-  .logo_entar {
-    height: 30px;
-    width: 30px;
-  }
-  
-  .btn_simulador {
-    color: white;
-    margin-left: 50px;
-    background-color: rgb(78 178 101);
-    height: 40px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 30px;
-  }
-  
-  a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:link {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:visited {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:hover {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:active {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  /* fim do header */
-
-  .fundo {
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-
-  .video {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  @media (min-aspect-ratio: 16/9) {
-    .video {
-        width: 100%;
-        height: auto;
-
-    }
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media (max-aspect-ratio: 16/9) {
-    .video {
-        width: 100%;
-        height: auto;
-    }
+/*header*/
+
+body {
+  font-family: monospace;
+  margin: 0px;
+  height: 500px;
+  width: 100%;
+  padding: 0px;
 }
+
+.header {
+  width: 100%;
+  height: 85px;
+  align-items: center;
+  background-image: url(https://i.pinimg.com/736x/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.jpg);
+}
+
+.logo_header {
+  height: 60px;
+  width: 170px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+
+
+.logo_header:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.header .container {
+  height: 100%;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin-top: 14px;
+  width: 500px;
+  color: goldenrod;
+  list-style: none;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+.btn_simulador {
+  color: white;
+  margin-left: 50px;
+  background-color: rgb(78 178 101);
+  height: 40px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn_simulador:hover {
+  transform: scale(1.1);
+}
+
+a {
+  transition: 0.5s;
+}
+
+a:link {
+  color: goldenrod;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: goldenrod;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 20px;
+  transform: scale(1.1);
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:link {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:visited {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.link_a:active {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* fim do header */
+.imagemFundo {
+  width: 100%;
+  height: 900px;
+  background-repeat: no-repeat;
+  background-image: url(https://wallpaperaccess.com/full/5405138.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+h1 {
+  font-size: 60px;
+  color: #4bd5ee;
+  font-family: "News Cycle", sans-serif;
+  font-weight: 500;
+  animation: fadeIn 4s ease-in;
+  padding: 0px;
+  margin: 0px;
+}
+
+@keyframes fadeIn {
+  from {
+    color: #000;
+  }
+
+  to {
+    color: #4bd5ee;
+  }
+}
+
+.divisoria {
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  background-color: black;
+  box-shadow: 10px 5px 20px 40px black;
+}
+
