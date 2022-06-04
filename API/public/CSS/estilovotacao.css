@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  /*header*/
+
+  body {
+    font-family: monospace;
+    margin: 0px;
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://wallpaperaccess.com/full/5405138.jpg);
+    }
+  
+    .header {
+      width: 100%;
+      height: 85px;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.700);
+    }
+    
+    .logo_header {
+      height: 60px;
+      width: 170px;
+      margin-top: 20px;
+      margin-left: 40px;
+      margin-bottom: 20px;
+      transition: 0.5s;
+    }
+    
+    .logo_header:hover {
+      transform: scale(1.1);
+    }
+    
+    .container {
+      width: 100%;
+      display: flex;
+    }
+    
+    .header .container {
+      height: 100%;
+      width: 95%;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .navbar {
+      margin-top: 14px;
+      width: 500px;
+      color: goldenrod;
+      list-style: none;
+      align-items: center;
+      display: flex;
+      padding: 0;
+      justify-content: space-between;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold;
+    }
+    
+    .botaoLogin {
+      color: goldenrod;
+      margin-left: 50px;
+      background-color: white;
+      height: 40px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      border-radius: 30px;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+    
+    .botaoLogin:hover {
+      transform: scale(1.1);
+    }
+    
+    a {
+      transition: 0.5s;
+    }
+    
+    a:link {
+      color: goldenrod;
+      background-color: transparent;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    a:visited {
+      color: goldenrod;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: goldenrod;
+      background-color: transparent;
+      text-decoration: underline;
+      font-size: 20px;
+      transform: scale(1.1);
+    }
+    
+    a:active {
+      color: white;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+/* Fim do Header */
+
+.cardImagens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.imperioImagem {
+  border-radius: 600px;
+  height: 8cm;
+  transition: 0.5s;
+}
+
+.imperioImagem:hover {
+  transform: scale(1.2);
+}
+
+.imperioEsquerda {
+margin-right: 150px;
+}
+
+.rebeldesImagem {
+  border-radius: 600px;
+  height: 8cm;
+  transition: 0.5s;
+}
+
+.rebeldesImagem:hover {
+  transform: scale(1.2);
+}
+
+.rebeldesDireita {
+margin-left: 150px;
+}
+
+h1 {
+  margin-left: 25px;
+  color: goldenrod;
+}
+
+.cardImagens b {
+  margin-top: 20px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  -webkit-text-stroke: 1px goldenrod;
+}
+
+.aviso {
+  margin-top: 90px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
