@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Star Wars || Cadastro </title>
+    <link rel="icon" href="icone.png">
+    <link rel="stylesheet" href="CSS/estilocadastro.css">
+</head>
+<body>
+        <!-- Header -->
+        <div class="header">
+
+            <div class="container">
+    
+                <a href="index.html"><img src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-3-1.png" class="logo_header"></a>
+    
+                <ul class="navbar">
+                    <li><a href="index.html"> Inicio</a></li>
+                    <li><a href="SobreNós.html"> Sobre Nós</a></li>
+                    <li><a href="Servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li class="entrarheader"><a class="link_a" href="login.html"> Entrar</a>
+                    </li>
+                </ul>
+    
+                <div class="botaoLogin">
+                    <a href="login.html">Entrar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Fim do Header -->
+        
+        <div class="cardCadastro">
+
+            <div class="inputs">
+                <h2>CADASTRE-SE</h2>
+
+                <b>Insira seu nome:</b> <br>
+                <input type="text" id="nome_input" placeholder="Luke Skywalker">
+                <br>
+                <br>
+                <br>
+                 <b>Insira seu email:</b> <br>
+                <input type="email" id="email_input" placeholder="exemplo@gmail.com">
+                <br>
+                <br>
+                <br>
+                <b>Insira seu telefone:</b> <br>
+                <input type="tel" id="telefone_input" placeholder="11 99999-9999">
+                <br>
+                <br>
+                <br>
+                <b>Insira sua senha:</b> <br>
+                <input type="password" id="senha_input" placeholder="*********">
+                <br>
+                <br>
+                <button class="btnCadastro" onclick="cadastrar()">Cadastrar</button>
+                <br>
+                Já tem uma conta? <br> 
+                <a href="login.html">Logue agora!</a>
+            </div>
+        </div>
+
+        <!--Modal de validação-->
+    <div class="modal-containerL" id="modal_container">
+        <div class="modalL">
+            <h2 id="titulo_m"></h2>
+            <p id="p_msg"></p>
+        </div>
+        <button class="button1L" id="close">X</button>
+    </div>
+
+</body>
+</html>
+<script>
+
+function cadastrar() {
+
+const open = document.getElementById('open');
+const modal_container = document.getElementById('modal_container');
+const close = document.getElementById('close');
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+var nomeVar = nome_input.value;
+var emailVar = email_input.value;
+var telefoneVar = telefone_input.value;
+var senhaVar = senha_input.value;
+
+if (nomeVar == "" || emailVar == "" || telefoneVar == "" || senhaVar == "") {
+    titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+
+    modal_container.classList.add('show');
+
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+    return
+}
+
+if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1 || senhaVar == '') {
+    titulo_m.innerHTML = `<br>Email ou senha inválidos.`
+
+    modal_container.classList.add('show');
+
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+    return
+}
+
+if (telefoneVar.indexOf("-") == -1 || telefoneVar.length < 13) {
+    titulo_m.innerHTML = `<br>Telefone inválido.`
+    p_msg.innerHTML = `<br> Ele deve conter 13 caracteres, incluindo -`
+
+    modal_container.classList.add('show');
+
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+    return
+}
+
+// Enviando o valor da nova input
+fetch("/usuarios/cadastrar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        telefoneServer: telefoneVar,
+        senhaServer: senhaVar
+    })
+}).then(function () {
+
+    titulo_m.innerHTML = `<br>Cadastro realizado com sucesso!`
+    p_msg.innerHTML = ``
+
+
+    modal_container.classList.add('show');
+
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+        window.location.href = "login.html";
+    });
+})
+    .catch(function (errinho) {
+        console.error(errinho)
+    })
+
+console.log()
+}
+
+</script>
