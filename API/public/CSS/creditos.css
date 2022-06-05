@@ -125,7 +125,7 @@
     left: 45%;
     z-index: 1;
     margin: auto;
-    animation: logo 9s ease-out 9s;
+    animation: logo 9s ease-out 1s;
     opacity: 0;
 }
 
@@ -133,7 +133,7 @@
     width: inherit;
 }
 
-/* Scale the logo down and maintain it centered */
+/* Efeito de diminuir a logo (Width deixa centralizado) */
 @keyframes logo {
     0% {
         width: 18em;        
@@ -155,7 +155,7 @@ p {
   color: #FFFF82;
 }
 
-/* Set the font, lean the board, position it */
+/* Posiciona e personaliza a fonte */
 #board {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   transform: perspective(300px) rotateX(25deg);
@@ -181,9 +181,9 @@ p {
   top: 0;
 }
 
-/* Set the scrolling animation and position it */
+/* Animação de scrollar pra cima*/
 #content {
-  animation: scroll 100s linear 16s;
+  animation: scroll 100s linear 5s;
   position: absolute;
   top: 100%;
 }

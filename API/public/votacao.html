@@ -21,10 +21,9 @@
 
             <ul class="navbar">
                 <li><a href="index.html"> Inicio</a></li>
-                <li><a href="SobreNós.html"> Sobre Nós</a></li>
-                <li><a href="Servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li class="entrarheader"><a class="link_a" href="login.html"> Entrar</a>
+                <li><a href="cadastro.html"> Cadastre-se </a></li>
+                <li><a href="grafico.html">Gráfico</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
                 </li>
             </ul>
 
@@ -79,6 +78,7 @@
 <script>
 
     var voto = []
+    var audio = ''
 
     const imperioImagem = document.getElementById('imperioImagem')
     const rebeldesImagem = document.getElementById('rebeldesImagem')
@@ -87,6 +87,8 @@
         voto.splice(0, 1, "1000")
         rebeldesImagem.classList.remove('show2')
         imperioImagem.classList.add('show')
+        audio = new Audio("./CSS/Audios/Vader.mp3");
+        audio.play();
     }
 
 
@@ -94,6 +96,8 @@
         voto.splice(0, 1, "1001")
         rebeldesImagem.classList.add('show2')
         imperioImagem.classList.remove('show')
+        audio = new Audio("./CSS/Audios/Luke.mp3");
+        audio.play();
     }
 
     function cadastrarV() {
@@ -115,7 +119,7 @@
                 idUsuarioServer: sessionStorage.ID_USUARIO
             })
         }).then(function () {
-
+            window.location.href = "grafico.html"
         })
             .catch(function (errinho) {
                 console.error(errinho)

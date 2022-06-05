@@ -118,7 +118,6 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 0;
 }
 
 h1 {
@@ -143,8 +142,40 @@ h1 {
 
 .divisoria {
   width: 100%;
-  height: 50px;
-  z-index: 1;
+  height: 60px;
   background-color: black;
-  box-shadow: 10px 5px 20px 40px black;
+  box-shadow: 10px 5px 20px 50px black;
+}
+
+.imagemFundo2 {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+b {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.refCadastro {
+transition: 0.5s;
+}
+
+.refCadastro:hover {
+  color: goldenrod;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 20px;
+  transform: scale(1.1);
 }
