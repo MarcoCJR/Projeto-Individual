@@ -228,7 +228,7 @@
 .button1L:hover {
     background: white;
     color: goldenrod;
-    border: 1px solid #7FCC8E;
+    border: 1px solid gold;
     border-radius: 40px;
     box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }

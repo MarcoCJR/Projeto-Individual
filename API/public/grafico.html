@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Star Wars || Gráfico </title>
+    <link rel="icon" href="CSS/icone.png">
+    <link rel="stylesheet" href="CSS/estilografico.css">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+
+        <div class="container">
+
+            <a href="index.html"><img src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-3-1.png"
+                    class="logo_header"></a>
+
+            <ul class="navbar">
+                <li><a href="index.html"> Inicio</a></li>
+                <li><a href="SobreNós.html"> Sobre Nós</a></li>
+                <li><a href="Servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="entrarheader"><a class="link_a" href="login.html"> Entrar</a>
+                </li>
+            </ul>
+
+            <div class="botaoLogin">
+                <a href="login.html">Entrar</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Header -->
+
+    <div class="div_grafico">
+        <canvas id="myChart" class="grafico" style="background-color:white;"></canvas>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+
+    function obterDadosGrafico(idAquario) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico(resposta, i) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    borderSkipped: 'bottom',
+                    yAxisID: 'y-umidade',
+                    label: 'Votos',
+                    borderColor: '#f84403',
+                    backgroundColor: '#660404',
+                    borderWidth: '2',
+                    fill: true,
+                    data: []
+                },
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.Escolha);
+            dados.datasets[0].data.push(registro.qntd_voto);
+        }
+
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart.getContext('2d');
+        window.grafico_linha = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+    }
+</script>

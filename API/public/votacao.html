@@ -38,7 +38,8 @@
         <div class="imperioEsquerda">
             <h1>Junte-se ao Império!</h1>
             <img class="imperioImagem"
-                src="https://toppng.com/uploads/preview/star-wars-imperial-logo-galactic-empire-11563654660dg1du5g85h.png" onclick="teste()">
+                src="https://toppng.com/uploads/preview/star-wars-imperial-logo-galactic-empire-11563654660dg1du5g85h.png"
+                onclick="imperio()" id="imperioImagem">
             <br>
             <b>O Império precisa de você. A escória <br>
                 rebelde vem se alastrando por todo <br>
@@ -51,7 +52,8 @@
 
         <div class="rebeldesDireita">
             <h1>Junte-se à Rebelião!</h1>
-            <img class="rebeldesImagem" src="https://i.pinimg.com/474x/6a/d1/9b/6ad19b8ccd205f0645b89f960d5ae782.jpg">
+            <img class="rebeldesImagem" src="https://i.pinimg.com/474x/6a/d1/9b/6ad19b8ccd205f0645b89f960d5ae782.jpg"
+                onclick="rebeldes()" id="rebeldesImagem">
             <br>
             <b>A Rebelião busca sua ajuda! <br>
                 O Império está lentamente envenenando <br>
@@ -63,15 +65,63 @@
                 a libertar toda a galáxia!</b>
         </div>
     </div>
+
     <div class="aviso">
-        <b>ATENÇÃO: Suas informações usadas no cadastro serão utilizadas para armazenar <br> seu voto em nosso Banco de Dados, mas nunca serão reveladas a terceiros.</b>
-    </div>
+        <b>ATENÇÃO: Suas informações usadas no cadastro serão utilizadas para armazenar <br> seu voto em nosso Banco de
+            Dados, mas nunca serão reveladas a terceiros.</b>
+    </div> <br>
+    <br>
+    <button onclick="cadastrarV()"> <b>Aliste-se!</b> </button>
 </body>
 
 </html>
 
 <script>
-    function teste() {
-        alert('Teste')
+
+    var voto = []
+
+    const imperioImagem = document.getElementById('imperioImagem')
+    const rebeldesImagem = document.getElementById('rebeldesImagem')
+
+    function imperio() {
+        voto.splice(0, 1, "1000")
+        rebeldesImagem.classList.remove('show2')
+        imperioImagem.classList.add('show')
     }
+
+
+    function rebeldes() {
+        voto.splice(0, 1, "1001")
+        rebeldesImagem.classList.add('show2')
+        imperioImagem.classList.remove('show')
+    }
+
+    function cadastrarV() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var votoVar = voto[0];
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarv", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                votoServer: votoVar,
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+        }).then(function () {
+
+        })
+            .catch(function (errinho) {
+                console.error(errinho)
+            })
+
+        console.log()
+    }
+
 </script>

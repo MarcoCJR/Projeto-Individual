@@ -4,21 +4,21 @@
   }
   
   /*header*/
-  
+
   body {
     font-family: monospace;
     margin: 0px;
-    height: 500px;
     width: 100%;
-    padding: 0px;
-    background-color: black;
-  }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://wallpaperaccess.com/full/5405138.jpg);
+    }
   
   .header {
     width: 100%;
     height: 85px;
     align-items: center;
-    background-image: url(https://i.pinimg.com/736x/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.jpg);
+    background-color: rgba(0, 0, 0, 0.700);
   }
   
   .logo_header {
@@ -109,94 +109,4 @@
     background-color: transparent;
     text-decoration: underline;
   }
-
-/* Início dos Créditos */
-
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-  }
-
-  .logo {    
-    position: absolute;
-    top: 20%;
-    left: 45%;
-    z-index: 1;
-    margin: auto;
-    animation: logo 9s ease-out 9s;
-    opacity: 0;
-}
-
-.logo svg {
-    width: inherit;
-}
-
-/* Scale the logo down and maintain it centered */
-@keyframes logo {
-    0% {
-        width: 18em;        
-        transform: scale(2.75);
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-        width: 18em;      
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.1);
-        width: 18em;
-    }
-}
-
-p {
-  color: #FFFF82;
-}
-
-/* Set the font, lean the board, position it */
-#board {
-  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  transform: perspective(300px) rotateX(25deg);
-  transform-origin: 50% 100%;
-  text-align: justify;
-  position: absolute;
-  margin-left: -9em;
-  font-weight: bold;
-  overflow: hidden;
-  font-size: 350%;
-  height: 50em;
-  width: 18em;
-  bottom: 0;
-  left: 50%;
-}
-
-#board:after {    
-  position: absolute;
-  content: ' ';
-  bottom: 60%;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-/* Set the scrolling animation and position it */
-#content {
-  animation: scroll 100s linear 16s;
-  position: absolute;
-  top: 100%;
-}
-
-#title, #subtitle {
-  text-align: center;
-}
-
-@keyframes scroll {
-    0% {
-        top: 100%;
-    }
-    100% {
-        top: -170%;
-    }
-}
+  /* fim do header */

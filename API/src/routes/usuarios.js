@@ -31,4 +31,9 @@ router.post("/cadastrarF", function (req, res) {
 router.post("/autualizarFKF", function (req, res) {
     usuarioController.autualizarFKF(req, res);
 })
+
+router.post("/cadastrarV", function (req, res) {
+    usuarioController.cadastrarV(req, res);
+})
+
 module.exports = router;
